@@ -1,0 +1,1 @@
+sap.ui.define(["arrgestionreclamorasa/arrgestionreclamorasa/controller/principal.controller"],function(n){"use strict";QUnit.module("principal Controller");QUnit.test("I should test the principal controller",function(o){var t=new n;t.onInit();o.ok(t)})});

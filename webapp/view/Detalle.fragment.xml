@@ -1,0 +1,127 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="Detalle" title="" draggable="true">
+		<content>
+			<Panel headerText="Resumen Reclamo">
+				<VBox height="10px"/>
+				<Label text="..." id="tituloPanel" design="Bold" textAlign="End"/>
+				<VBox height="10px"/>
+				<HBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="200px" justifyContent="Start" visible="true" displayInline="false">
+						<Text text="ENTREGA" width="100%"/>
+						<VBox height="10px"/>
+						<Label text="..." id="a1" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="PEDIDO WEB" width="100%"/>
+						<VBox height="10px"/>
+						<Label text="..." id="a2" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="NÚMERO PIEZA" width="100%"/>
+						<VBox height="10px"/>
+						<Label text="..." id="a3" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="CANTIDAD RECLAMADA" width="100%"/>
+						<VBox height="10px"/>
+						<Label text="..." id="a4" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="ESTADO RECLAMO" width="100%"/>
+						<VBox height="10px"/>
+						<ComboBox xmlns="sap.m" id="a5" placeholder="Destinatario" width="100%" items="{path: 'estado>/'}" editable="false" change="Destinatario">
+							<items>
+								<core:Item xmlns:core="sap.ui.core" key="{estado>ID_EDO}" text="{estado>DESCRIPCION}"/>
+							</items>
+						</ComboBox>
+					</VBox>
+					<HBox width="30px"/>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="200px" justifyContent="Start" visible="true" displayInline="false">
+						<Text text="REMITO LEGAL" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="b1" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="PEDIDO DEALER" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="b2" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="DESCRIPCION" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="b3" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="FACTURA SAP" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="b4" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="FECHA FACTURADA" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="b5" design="Bold"/>
+					</VBox>
+					<HBox width="30px"/>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="200px" justifyContent="Start" visible="true" displayInline="false">
+						<Text text="FECHA REMITO" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="c1" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="TIPO PEDIDO" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="c2" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="CANTIDAD FACTURADA" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="c3" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="FACTURA LEGAL" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="c4" design="Bold"/>
+						<VBox height="20px"/>
+						<Text text="FECHA ACTUALIZACIÓN" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Label text="..." id="c5" design="Bold"/>
+					</VBox>
+				</HBox>
+			</Panel>
+			<VBox height="10px"/>
+			<Panel headerText="Comentarios Dealer ">
+				<HBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="200px" justifyContent="Start" visible="true" displayInline="false">
+						<Text text="MOTIVO RECLAMO" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<TextArea editable="false" id="e1" textAlign="Left" width="100%" rows="4"/>
+						<!--<ComboBox xmlns="sap.m" id="e1" placeholder="Destinatario" width="100%" items="{path: 'reclamos>/'}" editable="false">-->
+						<!--	<items>-->
+						<!--		<core:Item xmlns:core="sap.ui.core" key="{reclamos>ID_MOTIVO}" text="{reclamos>DESCRIPCION}"/>-->
+						<!--	</items>-->
+						<!--</ComboBox>-->
+					</VBox>
+					<HBox width="30px"/>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="200px" justifyContent="Start" visible="true" displayInline="false">
+						<Text text="COMENTARIO DEALER" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<!--<Label text="..." id="d1" design="Bold"/>-->
+						<TextArea editable="false" id="d1" textAlign="Left" width="100%" rows="4"/>
+					</VBox>
+					<HBox width="30px"/>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="200px" justifyContent="Start" visible="true" displayInline="false">
+						<Text text="Fotos adjuntas" width="100%" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						<VBox height="10px"/>
+						<Button icon="sap-icon://picture" id = "ButtonPhoto" text="Visualizar ({= ${Fotos>/}.length })" type="{= ${Fotos>/}.length > 0 ? 'Default' : 'Negative'}" 
+							enabled="{= ${Fotos>/}.length > 0 }" press="openDialogFotos"/>
+						<!--Button id="btnAnexo" icon="sap-icon://download" text="Visualizar" type="Accept" press="ObtenerAexos"/-->
+					</VBox>
+				</HBox>
+			</Panel>
+			<Panel headerText="Comentarios Nissan " width="100%">
+				<HBox>
+					<HBox width="30px"/>
+					<!--<Input id="f1" placeholder="Ingrese Comentario" width="250%" editable = "true"/>-->
+					<TextArea editable="true" id="f1" placeholder="Comentario" textAlign="Left" width="250%" rows="4"/>
+				</HBox>
+				<VBox height="10px"/>
+			</Panel>
+		</content>
+		<buttons >
+			<Button id="btnGrabar" text="Grabar" type="Accept" icon="sap-icon://edit" press="ModificaComentarios"/>
+			<Button id="btnAprueba" icon="sap-icon://accept" text="Aprueba" type="Accept" press="popapruebo"/>
+			<Button id="btnRechaza" text="Rechazar" type="Reject" icon="sap-icon://decline" press="poprechazo"/>
+			<Button id="salir" text="Salir" type="Reject" icon="sap-icon://create-form" press="cerrarpopDetalle"/>
+		</buttons>
+		<!-- sap.m.Button -->
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="GReclamo" title="Solicitud de creación de material" draggable="true">
+		<VBox class="sapUiResponsiveMargin">
+			<VBox alignItems="Start">
+				<Label text="Motivo de reclamo" width="100%"/>
+				<ComboBox xmlns="sap.m" id="cmbtipoR" placeholder="Motivo Reclamo" width="120%" items="{path: 'reclamos>/'}" 
+					change="Destinatario">
+					<items>
+						<core:Item xmlns:core="sap.ui.core" key="{reclamos>ID_MOTIVO}" text="{reclamos>DESCRIPCION}"/>
+					</items>
+				</ComboBox>
+			</VBox>
+			<VBox alignItems="Start">
+				<Label text="Cantidad Reclamo" width="100%"/>
+				<Input editable="true" id="cantidadR" textAlign="Left" width="120%"/>
+			</VBox>
+			<VBox alignItems="Start">
+				<Label text="Descripcion reclamo" width="100%"/>
+				<TextArea editable="true" id="comentarioR" placeholder="Comentario" textAlign="Left" width="120%"  	rows="4" />
+			</VBox>
+		</VBox>
+		<buttons>
+			<Button text="Enviar correo" press="AgregarModificacion" icon="sap-icon://paper-plane"/>
+			<Button text="Cancelar" press="CerrarModificar"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
